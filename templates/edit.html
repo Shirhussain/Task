@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block content %}
+    {% if task %}
+        <form class="form-inline my-2 my-lg-0" method="POST">
+            {% csrf_token %}
+            <input type="search" placeholder="{{task.item}}" value="{{task.item}}" aria-label="search" name="item" class="form-control mr-ms-2">
+            <input type="hidden" value="{{task.completed}}" name="completed">
+            <button class="btn btn-outline-secondary my-2 my-sm-0" type="submit">Edit Task</button>
+        </form>
+
+    {% endif %}
+{% endblock %}
